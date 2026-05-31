@@ -87,7 +87,7 @@ export default function VisionSection() {
                 fontFamily: "Georgia, serif",
               }}
             >
-              "We don't need another list collector or a database to dump links. We need a sanctuary. A place where what you do today aligns with who you want to be tomorrow."
+              {"\"We don't need another list collector or a database to dump links. We need a sanctuary. A place where what you do today aligns with who you want to be tomorrow.\""}
             </p>
           </div>
         </div>

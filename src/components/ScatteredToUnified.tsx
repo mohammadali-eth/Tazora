@@ -10,7 +10,7 @@ interface AppNode {
   unifiedY: number;
   fontFamily: string;
   fontStyle: string;
-  fontWeight: string;
+  fontWeight: React.CSSProperties["fontWeight"];
   color: string;
 }
 
@@ -169,7 +169,7 @@ export default function ScatteredToUnified() {
               <div
                 style={{
                   fontSize: isUnified ? "14px" : "13px",
-                  fontWeight: isUnified ? "600" : (app.fontWeight as any),
+                  fontWeight: isUnified ? "600" : app.fontWeight,
                   fontFamily: isUnified ? "var(--font-sans)" : app.fontFamily,
                   fontStyle: isUnified ? "normal" : app.fontStyle,
                   color: isUnified ? "var(--text-primary)" : app.color,

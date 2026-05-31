@@ -208,7 +208,7 @@ export default function FinalCTA() {
                   lineHeight: "1.6",
                 }}
               >
-                Welcome to the queue. We've reserved your slot and will reach out to <strong>{email}</strong> when your invitation is ready.
+                Welcome to the queue. {"We've"} reserved your slot and will reach out to <strong>{email}</strong> when your invitation is ready.
               </p>
             </div>
           )}
