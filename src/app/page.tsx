@@ -129,7 +129,7 @@ export default function Home() {
           }}
         >
           {/* Left Column: Asymmetrical Typographic Hero */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left", zIndex: 2 }}>
             {/* Tagline Label */}
             <span
               style={{
@@ -139,7 +139,7 @@ export default function Home() {
                 letterSpacing: "0.2em",
                 color: "var(--accent)",
                 display: "inline-block",
-                marginBottom: "24px",
+                marginBottom: "20px",
               }}
             >
               A Life Operating System
@@ -153,7 +153,7 @@ export default function Home() {
                 letterSpacing: "-0.04em",
                 color: "var(--text-primary)",
                 maxWidth: "640px",
-                marginBottom: "24px",
+                marginBottom: "20px",
               }}
             >
               Your Life.
@@ -162,6 +162,30 @@ export default function Home() {
                 Finally Organized.
               </span>
             </h1>
+
+            {/* Premium Status Bar */}
+            <div
+              style={{
+                display: "flex",
+                gap: "16px",
+                color: "var(--text-muted)",
+                fontSize: "9px",
+                fontFamily: "monospace",
+                letterSpacing: "0.08em",
+                marginBottom: "32px",
+                textTransform: "uppercase",
+                alignItems: "center",
+              }}
+            >
+              <span>[ TZR.SYS // RUNNING ]</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>[ ENCRYPTED PORTAL ]</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--success)" }} />
+                ACTIVE
+              </span>
+            </div>
 
             <p
               style={{
@@ -197,6 +221,7 @@ export default function Home() {
                   gap: "8px",
                   transition: "var(--transition-smooth)",
                 }}
+                className="hero-cta-btn hover-underline"
               >
                 Request Access
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,6 +242,7 @@ export default function Home() {
                   gap: "4px",
                   transition: "var(--transition-smooth)",
                 }}
+                className="hero-learn-btn hover-underline-muted"
               >
                 Learn More
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +252,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Column: Blueprint Schematic */}
+          {/* Right Column: Blueprint Schematic with Radial Ambient Glow */}
           <div
             style={{
               width: "100%",
@@ -236,7 +262,22 @@ export default function Home() {
               position: "relative",
             }}
           >
-            <LifeSystemsVisual />
+            {/* Soft Warm Radial Light behind blueprint */}
+            <div
+              style={{
+                position: "absolute",
+                width: "140%",
+                height: "140%",
+                top: "-20%",
+                left: "-20%",
+                background: "radial-gradient(circle, rgba(139, 94, 60, 0.07) 0%, rgba(250, 248, 245, 0) 70%)",
+                pointerEvents: "none",
+                zIndex: 0,
+              }}
+            />
+            <div style={{ zIndex: 1, width: "100%" }}>
+              <LifeSystemsVisual />
+            </div>
           </div>
         </div>
 
@@ -252,6 +293,62 @@ export default function Home() {
               align-items: center !important;
               text-align: center !important;
             }
+          }
+
+          .hero-cta-btn:hover svg {
+            transform: translateX(4px);
+          }
+          .hero-cta-btn svg {
+            transition: transform 0.3s ease;
+          }
+
+          .hero-learn-btn:hover svg {
+            transform: translateY(3px);
+          }
+          .hero-learn-btn svg {
+            transition: transform 0.3s ease;
+          }
+
+          .hover-underline {
+            position: relative;
+            text-decoration: none;
+          }
+          .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1.5px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent);
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+
+          .hover-underline-muted {
+            position: relative;
+            text-decoration: none;
+          }
+          .hover-underline-muted::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1.5px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--text-muted);
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          .hover-underline-muted:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
           }
         `}} />
       </section>
