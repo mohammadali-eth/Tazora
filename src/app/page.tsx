@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import LifeSystemsVisual from "@/components/LifeSystemsVisual";
 import ScatteredToUnified from "@/components/ScatteredToUnified";
+import BrandMeaning from "@/components/BrandMeaning";
 import VisionSection from "@/components/VisionSection";
 import LifeMap from "@/components/LifeMap";
 import ProductShowcase from "@/components/ProductShowcase";
@@ -58,6 +59,9 @@ export default function Home() {
           <nav style={{ display: "flex", alignItems: "center", gap: "28px" }} className="desktop-nav">
             <a href="#story" className="nav-link">
               Problem
+            </a>
+            <a href="#brand" className="nav-link">
+              Meaning
             </a>
             <a href="#lifemap" className="nav-link">
               Life Map
@@ -407,6 +411,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION 2.5: Brand Meaning & Vision */}
+      <BrandMeaning />
+
       {/* SECTION 3: Vision */}
       <VisionSection />
 
@@ -719,6 +726,19 @@ export default function Home() {
               }}
             >
               Problem
+            </a>
+            <a
+              href="#brand"
+              onClick={() => setMenuOpen(false)}
+              style={{
+                fontSize: "clamp(1.8rem, 5vw, 2.5rem)",
+                fontWeight: 700,
+                color: "var(--text-primary)",
+                fontFamily: "Georgia, serif",
+                fontStyle: "italic",
+              }}
+            >
+              Meaning
             </a>
             <a
               href="#lifemap"
