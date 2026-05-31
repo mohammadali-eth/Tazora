@@ -249,7 +249,7 @@ export default function BrandMeaning() {
                   fontFamily: "Georgia, serif",
                 }}
               >
-                "The journey of transforming your life with clarity, purpose, and continuous growth."
+                {"\"The journey of transforming your life with clarity, purpose, and continuous growth.\""}
               </p>
             </div>
           </div>
