@@ -6,6 +6,7 @@ export default function FinalCTA() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,18 +85,12 @@ export default function FinalCTA() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                borderBottom: "1px solid rgba(139, 94, 60, 0.25)",
+                borderBottom: `1px solid ${isFocused ? "var(--accent)" : "rgba(139, 94, 60, 0.25)"}`,
                 width: "100%",
                 paddingBottom: "8px",
                 transition: "border-color 0.3s ease",
               }}
               className="cta-form"
-              onFocusCapture={(e) => {
-                e.currentTarget.style.borderColor = "var(--accent)";
-              }}
-              onBlurCapture={(e) => {
-                e.currentTarget.style.borderColor = "rgba(139, 94, 60, 0.25)";
-              }}
             >
               <input
                 type="email"
@@ -103,6 +98,8 @@ export default function FinalCTA() {
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
                 style={{
                   flex: 1,
                   padding: "12px 0",
@@ -114,6 +111,7 @@ export default function FinalCTA() {
                   outline: "none",
                   fontFamily: "var(--font-sans)",
                 }}
+                className="cta-input"
               />
               <button
                 type="submit"
@@ -135,6 +133,7 @@ export default function FinalCTA() {
                   transition: "all 0.3s ease",
                   opacity: isSubmitting ? 0.8 : 1,
                 }}
+                className="cta-btn"
               >
                 {isSubmitting ? "Requesting" : "Request Invitation"}
                 <svg
@@ -236,6 +235,26 @@ export default function FinalCTA() {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+
+        @media (max-width: 580px) {
+          .cta-form {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            border-bottom: none !important;
+            gap: 12px !important;
+          }
+          .cta-input {
+            border-bottom: 1px solid rgba(139, 94, 60, 0.25) !important;
+            padding: 12px 8px !important;
+            width: 100% !important;
+            text-align: center !important;
+          }
+          .cta-btn {
+            justify-content: center !important;
+            padding: 12px !important;
+            border-bottom: 1px solid var(--accent) !important;
           }
         }
       `}} />
