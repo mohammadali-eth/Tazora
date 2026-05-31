@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tazora — A Life Operating System
 
-## Getting Started
+Tazora is a premium, minimal **Life Operating System** designed to help individuals organize, coordinate, and review every important aspect of their life from a single, unified sanctuary. 
 
-First, run the development server:
+Tazora is **not** an AI tool, **not** a basic task manager, and **not** a generic note-taking application. It is a structured framework built for cognitive clarity, mental stability, and long-term organization.
 
+---
+
+## 🏛️ Architecture & Systems
+
+The platform is designed around five core organizational concepts:
+
+1. **The Daily Focus Canvas** — A unified workflow structure that replaces chaotic task lists, balancing deep attention blocks, calendar events, and core daily routines.
+2. **The Constellation Life Map** — An organic, interactive typographic network showing coordinates of connected life domains (Health, Growth, Finance, Career, Learning, memories, Faith) and how they influence one another.
+3. **The Blueprint Systems Visualizer** — A technical blueprint graphic representing structural coordination of life modules.
+4. **The Typographic Core Vision Index** — A clean table of contents displaying the seven core pillars of personal stability.
+5. **The Lifecycle Timeline Feed** — A continuous narrative feed showcasing how Tazora scales alongside you through life stages (from Student to Retirement).
+
+---
+
+## 🎨 Design Philosophy
+
+Tazora rejects standard SaaS design clichés. The user interface features:
+- **Zero Card Panels** — No cards, rounded boxes, capsule buttons, shadows, or borders.
+- **Asymmetric Grid Spreads** — Left-aligned editorial grids that reflect high-end design monographs.
+- **Premium Serif Highlights** — Heavy Georgia serif italic details contrasted with modern, clean typography.
+- **Flat Underline Interactions** — Input fields are transparent with single bottom underline dividers.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (version 20.9.0 or higher)
+- npm (Node Package Manager)
+
+### Installation
+Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/mohammadali-eth/Tazora.git
+cd Tazora
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running Locally
+To launch the hot-reloading development server:
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the interface.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
+To compile and test the optimized production build:
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Stack
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript / TSX
+- **Styling**: Vanilla CSS (globals.css) & inline inline structural styles
